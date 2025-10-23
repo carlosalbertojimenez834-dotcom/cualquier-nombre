@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Barbero Real - Estilo y Tradición</title>
+    <!-- Incluir Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración personalizada de Tailwind para fuentes y colores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#B5872E', // Oro/Ámbar
+                        'secondary': '#1A1A1A', // Gris Oscuro para fondo
+                        'accent': '#E5E7EB', // Blanco Roto
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para el fondo */
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/1A1A1A/E5E7EB?text=Barberia+Elegante');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Capa oscura para mejor contraste */
+        }
+        .section-separator {
+            height: 2px;
+            width: 80px;
+            margin: 1.5rem auto;
+            background-color: #B5872E;
+        }
+    </style>
+    <!-- Fuente Inter y Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <!-- Iconos Lucide (simulando Font Awesome o similar) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body class="bg-secondary text-accent font-sans">
+
+    <!-- Header & Navigation -->
+    <header class="bg-black/90 sticky top-0 z-50 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-display font-extrabold text-primary tracking-wider">
+                El Barbero Real
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#servicios" class="text-accent hover:text-primary transition duration-300 text-lg">Servicios</a>
+                <a href="#galeria" class="text-accent hover:text-primary transition duration-300 text-lg">Galería</a>
+                <a href="#precios" class="text-accent hover:text-primary transition duration-300 text-lg">Precios</a>
+                <a href="#reservar" class="bg-primary px-4 py-2 rounded-lg text-secondary font-semibold hover:bg-yellow-600 transition duration-300">Reservar</a>
+            </nav>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-button" class="md:hidden text-accent focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 py-2">
+            <a href="#servicios" class="block px-4 py-2 text-lg text-accent hover:bg-gray-800">Servicios</a>
+            <a href="#galeria" class="block px-4 py-2 text-lg text-accent hover:bg-gray-800">Galería</a>
+            <a href="#precios" class="block px-4 py-2 text-lg text-accent hover:bg-gray-800">Precios</a>
+            <a href="#reservar" class="block px-4 py-2 text-lg text-primary hover:bg-gray-800">Reservar Cita</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center relative">
+        <div class="relative z-10 text-center px-4">
+            <h2 class="text-5xl md:text-7xl font-display font-bold mb-4 text-accent drop-shadow-lg leading-tight">
+                El Estilo Clásico se Encuentra con la Modernidad.
+            </h2>
+            <p class="text-xl md:text-2xl text-accent/90 mb-8 font-light max-w-3xl mx-auto">
+                Donde cada corte es una obra de arte. Reserva tu próxima experiencia de cuidado masculino.
+            </p>
+            <a href="#reservar" class="bg-primary text-secondary px-8 py-4 text-xl font-bold rounded-full shadow-2xl hover:bg-yellow-600 transition duration-300 transform hover:scale-105 inline-block">
+                ¡Agenda tu Cita Hoy!
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-[#121212]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-display font-bold text-primary mb-4">Nuestros Servicios de Lujo</h3>
+            <div class="section-separator"></div>
+            <p class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">Ofrecemos una gama completa de servicios diseñados para el caballero moderno que valora la calidad y la atención al detalle.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: Haircut -->
+                <div class="bg-secondary p-6 rounded-xl shadow-lg border border-primary/20 transform hover:scale-[1.02] transition duration-300 cursor-pointer">
+                    <svg class="w-12 h-12 text-primary mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="10"/><path d="M11 5v6l4 2"/></svg>
+                    <h4 class="text-2xl font-semibold text-accent mb-2">Corte Clásico</h4>
+                    <p class="text-gray-400">Desde el 'fade' moderno hasta el corte tradicional con tijera, garantizamos precisión.</p>
+                </div>
+                <!-- Service 2: Shave -->
+                <div class="bg-secondary p-6 rounded-xl shadow-lg border border-primary/20 transform hover:scale-[1.02] transition duration-300 cursor-pointer">
+                    <svg class="w-12 h-12 text-primary mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5l-7-7c-2-2-3-4-2.5-6.5C5.5 2.5 7.5 2 9.5 3.5l7 7c2 2 3 4 2.5 6.5s-2 4-4 2.5z"/><path d="M15 11l4 4"/></svg>
+                    <h4 class="text-2xl font-semibold text-accent mb-2">Afeitado a Navaja</h4>
+                    <p class="text-gray-400">Un ritual relajante con toallas calientes y aceites esenciales para una piel perfecta.</p>
+                </div>
+                <!-- Service 3: Beard Design -->
+                <div class="bg-secondary p-6 rounded-xl shadow-lg border border-primary/20 transform hover:scale-[1.02] transition duration-300 cursor-pointer">
+                    <svg class="w-12 h-12 text-primary mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10h.01"/><path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4l2 3h2l2-3h4a2 2 0 0 0 2-2Z"/></svg>
+                    <h4 class="text-2xl font-semibold text-accent mb-2">Diseño de Barba</h4>
+                    <p class="text-gray-400">Define, moldea y nutre tu barba con nuestros expertos en cuidado facial.</p>
+                </div>
+                <!-- Service 4: Luxury Treatments -->
+                <div class="bg-secondary p-6 rounded-xl shadow-lg border border-primary/20 transform hover:scale-[1.02] transition duration-300 cursor-pointer">
+                    <svg class="w-12 h-12 text-primary mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13.05v7.94c0 1.13.88 2.04 1.99 2.04h15.93c1.11 0 2.08-.94 2.08-2.04v-7.94"/><path d="M21 13.05l-4.57 3.51a3.49 3.49 0 0 1-4.86-.01L7 13.05"/><path d="M21 6.55l-4.57 3.51a3.49 3.49 0 0 1-4.86-.01L7 6.55"/></svg>
+                    <h4 class="text-2xl font-semibold text-accent mb-2">Tratamientos Lujo</h4>
+                    <p class="text-gray-400">Masajes capilares, tratamientos de limpieza profunda y cuidado de la piel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-display font-bold text-primary mb-4">Nuestra Galería de Estilos</h3>
+            <div class="section-separator"></div>
+            <p class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">Un vistazo a algunos de nuestros trabajos más recientes y el ambiente de nuestra barbería.</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative group overflow-hidden rounded-lg shadow-xl">
+                    <img src="https://placehold.co/400x500/3A3A3A/D5D5D5?text=Corte+Fade" alt="Corte de pelo moderno tipo Fade" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-accent text-lg font-semibold border-b-2 border-primary">Fade Clásico</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-xl">
+                    <img src="https://placehold.co/400x500/4A4A4A/D5D5D5?text=Barba+Perfilada" alt="Diseño y perfilado de barba" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-accent text-lg font-semibold border-b-2 border-primary">Barba Perfilada</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-xl">
+                    <img src="https://placehold.co/400x500/5A5A5A/D5D5D5?text=Afeitado+Ritual" alt="Afeitado tradicional con toalla caliente" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-accent text-lg font-semibold border-b-2 border-primary">Ritual de Afeitado</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-xl">
+                    <img src="https://placehold.co/400x500/6A6A6A/D5D5D5?text=Interior+Barberia" alt="Interior moderno y elegante de la barbería" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-accent text-lg font-semibold border-b-2 border-primary">Ambiente Único</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="precios" class="py-20 bg-[#121212]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-display font-bold text-primary mb-4">Tarifas Exclusivas</h3>
+            <div class="section-separator"></div>
+            <p class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">Invertir en tu imagen es esencial. Estos son nuestros precios para los servicios más solicitados.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Price Card 1: Haircut -->
+                <div class="bg-secondary p-8 rounded-xl shadow-2xl border-t-4 border-primary hover:shadow-primary/30 transition duration-300">
+                    <h4 class="text-3xl font-display font-bold mb-4 text-accent">Corte de Cabello</h4>
+                    <p class="text-primary text-5xl font-extrabold mb-6">$25</p>
+                    <ul class="text-gray-400 space-y-3 text-left">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Corte de estilo personalizado</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Lavado y secado</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Producto de acabado premium</li>
+                    </ul>
+                    <a href="#reservar" class="mt-8 block bg-primary text-secondary px-6 py-3 font-semibold rounded-lg hover:bg-yellow-600 transition duration-300">Reservar Corte</a>
+                </div>
+
+                <!-- Price Card 2: Shave -->
+                <div class="bg-secondary p-8 rounded-xl shadow-2xl border-t-4 border-primary hover:shadow-primary/30 transition duration-300">
+                    <h4 class="text-3xl font-display font-bold mb-4 text-accent">Afeitado Navaja</h4>
+                    <p class="text-primary text-5xl font-extrabold mb-6">$20</p>
+                    <ul class="text-gray-400 space-y-3 text-left">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Toallas calientes/frías</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Rasurado profesional</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Bálsamo post-afeitado</li>
+                    </ul>
+                    <a href="#reservar" class="mt-8 block bg-primary text-secondary px-6 py-3 font-semibold rounded-lg hover:bg-yellow-600 transition duration-300">Reservar Afeitado</a>
+                </div>
+
+                <!-- Price Card 3: Combo -->
+                <div class="bg-secondary p-8 rounded-xl shadow-2xl border-t-4 border-primary hover:shadow-primary/30 transition duration-300">
+                    <h4 class="text-3xl font-display font-bold mb-4 text-accent">Combo Rey</h4>
+                    <p class="text-primary text-5xl font-extrabold mb-6">$40</p>
+                    <ul class="text-gray-400 space-y-3 text-left">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Corte de Cabello Clásico</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Afeitado a Navaja Completo</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10-10"/></svg> Masaje y exfoliación facial</li>
+                    </ul>
+                    <a href="#reservar" class="mt-8 block bg-primary text-secondary px-6 py-3 font-semibold rounded-lg hover:bg-yellow-600 transition duration-300">Reservar Combo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation/Contact Section -->
+    <section id="reservar" class="py-20 bg-secondary">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-display font-bold text-primary text-center mb-4">Agenda tu Experiencia</h3>
+            <div class="section-separator"></div>
+            <p class="text-lg text-gray-400 text-center mb-10">Rellena el formulario y nos pondremos en contacto contigo para confirmar tu cita.</p>
+
+            <form class="bg-[#121212] p-8 rounded-xl shadow-2xl border border-primary/20">
+                <div class="mb-4">
+                    <label for="nombre" class="block text-accent mb-2">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" class="w-full p-3 bg-secondary border border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-accent" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-accent mb-2">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 bg-secondary border border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-accent" required>
+                </div>
+                <div class="mb-4">
+                    <label for="servicio" class="block text-accent mb-2">Servicio Deseado</label>
+                    <select id="servicio" name="servicio" class="w-full p-3 bg-secondary border border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-accent" required>
+                        <option value="" disabled selected>Selecciona un servicio</option>
+                        <option value="corte">Corte de Cabello</option>
+                        <option value="afeitado">Afeitado a Navaja</option>
+                        <option value="combo">Combo Rey</option>
+                        <option value="barba">Diseño de Barba</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="fecha" class="block text-accent mb-2">Fecha Preferida</label>
+                    <input type="date" id="fecha" name="fecha" class="w-full p-3 bg-secondary border border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-accent" required>
+                </div>
+                <button type="submit" class="w-full bg-primary text-secondary px-6 py-3 text-lg font-bold rounded-lg hover:bg-yellow-600 transition duration-300 shadow-xl">
+                    Confirmar Reserva
+                </button>
+                <div id="message-box" class="mt-4 p-3 bg-green-900 text-green-300 rounded-lg hidden">¡Cita solicitada con éxito! Nos pondremos en contacto pronto.</div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p class="text-2xl font-display font-bold text-primary mb-2">El Barbero Real</p>
+            <p class="mb-4">123 Calle del Estilo, Ciudad Elegante. Lunes a Sábado: 9:00 - 19:00</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-primary transition duration-300">Instagram</a>
+                <a href="#" class="hover:text-primary transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-primary transition duration-300">WhatsApp</a>
+            </div>
+            <p class="text-sm">&copy; 2025 El Barbero Real. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para interactividad -->
+    <script>
+        // Inicializar iconos Lucide
+        lucide.createIcons();
+
+        // Lógica para el menú móvil
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Ocultar el menú móvil al hacer clic en un enlace (para navegación fluida)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Lógica simple para el formulario de reserva
+        const form = document.querySelector('form');
+        const messageBox = document.getElementById('message-box');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Aquí iría la lógica real para enviar datos a un servidor
+            console.log('Formulario enviado (simulado)');
+
+            // Mostrar mensaje de éxito
+            messageBox.classList.remove('hidden');
+            messageBox.textContent = '¡Cita solicitada con éxito! Revisaremos tu solicitud pronto.';
+
+            // Limpiar el formulario y ocultar el mensaje después de 5 segundos
+            setTimeout(() => {
+                form.reset();
+                messageBox.classList.add('hidden');
+            }, 5000);
+        });
+
+    </script>
+</body>
+</html>
